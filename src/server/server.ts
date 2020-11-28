@@ -34,10 +34,11 @@ app.post('/go', (req, res) => {
                 type: 'error',
                 errorMsg: 'Not yet implemented'
             })
+        } else {
+            let order: google.maps.LatLng[] = solve(algo, points);
+            res.status(200).json({
+                data: order
+            });
         }
-        let order: google.maps.LatLng[] = solve(algo, points);
-        res.status(200).json({
-            data: order
-        });
     }
 });

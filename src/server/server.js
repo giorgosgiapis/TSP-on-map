@@ -32,9 +32,11 @@ app.post('/go', function (req, res) {
                 errorMsg: 'Not yet implemented'
             });
         }
-        var order = solve(algo, points);
-        res.status(200).json({
-            data: order
-        });
+        else {
+            var order = solve(algo, points);
+            res.status(200).json({
+                data: order
+            });
+        }
     }
 });
