@@ -9,6 +9,7 @@
     "@types/node": "^14.14.10",
     "express": "^4.17.1",
     "node": "^15.2.1",
+    "ts-node": "^9.0.0",
     "tslib": "^2.0.3"
   },
   "devDependencies": {},
@@ -18,8 +19,8 @@
     "postinstall": "npm run tsc",
     "test": "node dist/server/server.js"
   },
-  "engines": { 
-    "node": "14.8.0" 
+  "engines": {
+    "node": "14.8.0"
   },
   "keywords": [
     "TSP",
