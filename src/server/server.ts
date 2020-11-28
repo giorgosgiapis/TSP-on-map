@@ -4,7 +4,8 @@ const { solve } = require('./solver.js');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../../src/public')));
+app.use('/js', express.static(path.join(__dirname, '../public')));
 app.use(express.json())
 
 app.listen(8080, () => {
@@ -12,7 +13,7 @@ app.listen(8080, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, '../../src/public/index.html'));
 });
 
 app.post('/go', (req, res) => {

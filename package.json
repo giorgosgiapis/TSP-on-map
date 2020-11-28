@@ -2,7 +2,7 @@
   "name": "tsp-on-map",
   "version": "1.0.0",
   "description": "TSP solver on Google Maps",
-  "main": "src/server/server.js",
+  "main": "dist/server/server.js",
   "dependencies": {
     "@fireflysemantics/join": "^1.0.3",
     "@types/googlemaps": "^3.40.3",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node src/server/server.js"
+    "test": "node dist/server/server.js"
   },
   "keywords": [
     "TSP",
