@@ -14,7 +14,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node dist/server/server.js",
-    "postinstall": "tsc",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc",
     "test": "node dist/server/server.js"
   },
   "engines": { 
