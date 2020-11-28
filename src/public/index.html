@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.0.1/introjs.css"
+        integrity="sha512-8gb3kOvRlmcG93nKo/0rqLCwUNyeYpWyCtvKhy7I738TL/MMr/l57TH6lVoGArd1lcgtWCrty9a2KDnctRuFmg=="
+        crossorigin="anonymous" />
+    <link href="../themes/introjs-font.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>TSP on Maps</title>
+</head>
+
+<body>
+    <div class="search-box" id="pac-input" style="visibility: hidden;"><input class="pac-inp" type="text"
+            placeholder=" " /><span></span></div>
+    <button id="help-btn" onclick="initTour()" style="visibility: hidden;"><i class="fas fa-question"></i></button>
+    <div id="map"></div>
+    <div id="algo-select" style="visibility: hidden;">
+        <div id="dropdown">
+            <label for="algorithm">Choose an algorithm:</label>
+            <select id="algorithms">
+                <option value="dp">Dynamic Programming</option>
+                <option value="genetic">Genetic Algorithm</option>
+                <option value="christofides">Christofides Algorithm</option>
+            </select>
+        </div>
+        <div id="go-btn">
+            <button class="small button" id="goButton">Go</button>
+        </div>
+        <div id="reset-btn">
+            <button class="small button" id="reset">Reset</button>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.0.1/intro.js"
+        integrity="sha512-hZLiAzFVT8n1PdaY4Hs9AX3az2JXLEeX035335I8dyHgGtzFFolKDskLE8B0Ql8IcZ3SbmwRNs7sGxHzRMm+cQ=="
+        crossorigin="anonymous"></script>
+    <script>
+        function initTour() {
+            introJs().setOptions({
+                showStepNumbers: false,
+                showProgress: true,
+                steps: [
+                    {
+                        intro: "Click anywhere on the map to add a point."
+                    },
+                    {
+                        intro: "Click on a point to set/change it's label."
+                    },
+                    {
+                        intro: "Right click on a point to delete it."
+                    },
+                    {
+                        element: document.querySelector("#pac-input"),
+                        intro: "Search for a specific place on the map."
+                    },
+                    {
+                        element: document.querySelector("#dropdown"),
+                        intro: "Select algorithm to calculate the solution to TSP with. Only the Dynamic Programming one will (always) produce the correct answer. Since its time complexity is exponential it only works for small number of points (15 or less)."
+                    },
+                    {
+                        element: document.querySelector("#go-btn"),
+                        intro: "Find solution to TSP using the selected algorithm."
+                    },
+                    {
+                        element: document.querySelector("#reset-btn"),
+                        intro: "Reset map to initial state."
+                    }
+                ]
+            }).start();
+        }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwot94RRkOaRhc4e3LhBX4sgCJDgLwNUY&callback=initMap&libraries=geometry,places&v=weekly"
+        defer>
+    </script>
+    <script>
+        'use strict';
+
+        var searchBox = document.querySelectorAll('.search-box input[type="text"] + span');
+
+        searchBox.forEach((elm) => {
+            elm.addEventListener('click', () => {
+                elm.previousElementSibling.value = '';
+            });
+        });
+
+    </script>
+</body>
+
+</html>
