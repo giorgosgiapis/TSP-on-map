@@ -3,12 +3,13 @@ const path = require('path')
 const { solve } = require('./solver.js');
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../../src/public')));
 app.use('/js', express.static(path.join(__dirname, '../public')));
 app.use(express.json())
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log('listening on 8080');
 });
 
