@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "TSP solver on Google Maps",
   "main": "dist/server/server.js",
-  "homepage": "https://giorgosgiapis.github.io/TSP-on-map",
+  "homepage": "https://giorgosgiapis.github.io/TSP-on-map/",
   "dependencies": {
     "@fireflysemantics/join": "^1.0.3",
     "@types/googlemaps": "^3.40.3",
