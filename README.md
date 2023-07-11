@@ -1,7 +1,7 @@
 # TSP on Google Maps
 
 This is the code for the Travelling Salesman Problem (TSP) solver on Google Maps.
-You can see it in action [here](https://tsp-on-maps.herokuapp.com/).
+You can see it in action [here](https://tsp-on-map.onrender.com).
 
 ### Algorithms supported:
 
